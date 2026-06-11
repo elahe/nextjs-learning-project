@@ -8,12 +8,13 @@ import { Revenue } from '@/app/lib/definitions';
 // https://www.tremor.so/
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
+import { fetchRevenue } from '@/app/lib/data';
+ 
+// ...
+ 
+export default async function RevenueChart() { // Make component async, remove the props
+  const revenue = await fetchRevenue(); // Fetch data inside the component
 
-export default async function RevenueChart({
-  revenue,
-}: {
-  revenue: Revenue[];
-}) {
   const chartHeight = 350;
   // NOTE: Uncomment this code in Chapter 7
 
